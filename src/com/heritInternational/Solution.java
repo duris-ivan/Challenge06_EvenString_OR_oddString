@@ -12,7 +12,9 @@ public class Solution {
      *
      *
      * Details:
-     * ...The string "IvanDurisLikesJava" will be separated following as a result of the code
+     * ...The string "IvanDurisLikesJava" will be separated following as a result of the code "IaDrsieJv vnuiLksaa"  because:
+     * characters: "IaDrsieJv" are ODD characters of the entered string
+     * characters: "vnuiLksaa" are EVEN characters of the entered string
      * ...NOTE: the analysed String needs to be entered without spaces " " !
      */
     public static void main(String[] args) {
@@ -32,37 +34,37 @@ public class Solution {
 
             for(int j=0;j<T;j++) {
                 if(myString[j].length()%2==0){
-                    char[] evenChars=new char[myString[j].length()/2];
-                    char[] oddChars= new char[myString[j].length()/2];
+                    char[] oddChars=new char[myString[j].length()/2];
+                    char[] evenChars= new char[myString[j].length()/2];
                     for(int i=0;i<myString[j].length();i++){
                         myCharArray = myString[j].toCharArray();
                         int k= (int) Math.floor(i/2); // zaokruhlovanie nahor
 
                         if(i%2==0) { //even chars
-                            evenChars[k]=myCharArray[i];
+                            oddChars[k]=myCharArray[i];
                         }
                         else { //odd chars
-                            oddChars[k]=myCharArray[i];
+                            evenChars[k]=myCharArray[i];
                         }
 
                     }
-                    System.out.println(String.valueOf(evenChars) + " " + String.valueOf(oddChars));
+                    System.out.println("Even characters are: " + String.valueOf(evenChars) + " ; Odd characters are: " + String.valueOf(oddChars));
                 }
                 else{
-                    char[] evenChars=new char[myString[j].length()/2 + 1];
-                    char[] oddChars= new char[myString[j].length()/2];
+                    char[] evenChars=new char[myString[j].length()/2];
+                    char[] oddChars= new char[myString[j].length()/2+ 1];
                     for(int i=0;i<myString[j].length();i++){
                         myCharArray = myString[j].toCharArray();
                         int k= (int) Math.floor(i/2); // zaokruhlovanie nahor
 
                         if(i%2==0) { //even chars
-                            evenChars[k]=myCharArray[i];
-                        }
-                        else { //odd chars
                             oddChars[k]=myCharArray[i];
                         }
+                        else { //odd chars
+                            evenChars[k]=myCharArray[i];
+                        }
                     }
-                    System.out.println(String.valueOf(evenChars) + " " + String.valueOf(oddChars));
+                    System.out.println("Even characters are: " + String.valueOf(evenChars) + " ; Odd characters are: " + String.valueOf(oddChars));
                 }
             }
             sc.close();
